@@ -1,2 +1,5 @@
 ''''''''''''''
 box1 = sorted array (use value cur)'''''''''''''''box2 = value being compared'''''''box3=value being inserted'''''box 4= unsorted part
+Strings comparison illustration
+
+Erro: Single very long decimal gives no output
