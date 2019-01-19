@@ -8,3 +8,13 @@ D:\Mayank\Mayank_2018-19\Sem-4_CS244\Lab1-Insertion_Sort\Lab1-Insertion_Sort\obj
 D:\Mayank\Mayank_2018-19\Sem-4_CS244\Lab1-Insertion_Sort\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.exe
 D:\Mayank\Mayank_2018-19\Sem-4_CS244\Lab1-Insertion_Sort\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.xml
 D:\Mayank\Mayank_2018-19\Sem-4_CS244\Lab1-Insertion_Sort\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.pdb
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\Lab1-Insertion_Sort.exe.config
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.exe
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.xml
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.pdb
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\Lab1-Insertion_Sort.exe
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\Lab1-Insertion_Sort.pdb
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\Lab1-Insertion_Sort.xml
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_Sort.Form1.resources
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_Sort.Resources.resources
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.vbproj.GenerateResource.Cache

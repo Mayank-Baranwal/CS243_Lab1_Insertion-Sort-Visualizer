@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblNum = New System.Windows.Forms.Label()
         Me.txtNum = New System.Windows.Forms.TextBox()
         Me.btnSort = New System.Windows.Forms.Button()
@@ -32,7 +33,16 @@ Partial Class Form1
         Me.btnClr = New System.Windows.Forms.Button()
         Me.btnNxt = New System.Windows.Forms.Button()
         Me.lblDone = New System.Windows.Forms.Label()
-        Me.txtOutput = New System.Windows.Forms.RichTextBox()
+        Me.txtSorted = New System.Windows.Forms.TextBox()
+        Me.txtCmp1 = New System.Windows.Forms.TextBox()
+        Me.txtCmp2 = New System.Windows.Forms.TextBox()
+        Me.txtUnSorted = New System.Windows.Forms.TextBox()
+        Me.lblSorted = New System.Windows.Forms.Label()
+        Me.lblUnsorted = New System.Windows.Forms.Label()
+        Me.txtCmpRes = New System.Windows.Forms.TextBox()
+        Me.lblCmpWith = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtOutput1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'lblNum
@@ -84,7 +94,7 @@ Partial Class Form1
         'lblOutput
         '
         Me.lblOutput.AutoSize = True
-        Me.lblOutput.Location = New System.Drawing.Point(78, 343)
+        Me.lblOutput.Location = New System.Drawing.Point(88, 237)
         Me.lblOutput.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOutput.Name = "lblOutput"
         Me.lblOutput.Size = New System.Drawing.Size(71, 25)
@@ -126,20 +136,101 @@ Partial Class Form1
         Me.lblDone.Size = New System.Drawing.Size(0, 25)
         Me.lblDone.TabIndex = 10
         '
-        'txtOutput
+        'txtSorted
         '
-        Me.txtOutput.Location = New System.Drawing.Point(228, 262)
-        Me.txtOutput.Name = "txtOutput"
-        Me.txtOutput.Size = New System.Drawing.Size(714, 220)
-        Me.txtOutput.TabIndex = 11
-        Me.txtOutput.Text = ""
+        Me.txtSorted.BackColor = System.Drawing.Color.LightGreen
+        Me.txtSorted.Location = New System.Drawing.Point(228, 450)
+        Me.txtSorted.Name = "txtSorted"
+        Me.txtSorted.Size = New System.Drawing.Size(283, 30)
+        Me.txtSorted.TabIndex = 12
+        '
+        'txtCmp1
+        '
+        Me.txtCmp1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.txtCmp1.Location = New System.Drawing.Point(390, 509)
+        Me.txtCmp1.Name = "txtCmp1"
+        Me.txtCmp1.Size = New System.Drawing.Size(156, 30)
+        Me.txtCmp1.TabIndex = 13
+        '
+        'txtCmp2
+        '
+        Me.txtCmp2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.txtCmp2.Location = New System.Drawing.Point(652, 509)
+        Me.txtCmp2.Name = "txtCmp2"
+        Me.txtCmp2.Size = New System.Drawing.Size(249, 30)
+        Me.txtCmp2.TabIndex = 14
+        '
+        'txtUnSorted
+        '
+        Me.txtUnSorted.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.txtUnSorted.Location = New System.Drawing.Point(533, 450)
+        Me.txtUnSorted.Name = "txtUnSorted"
+        Me.txtUnSorted.Size = New System.Drawing.Size(409, 30)
+        Me.txtUnSorted.TabIndex = 15
+        '
+        'lblSorted
+        '
+        Me.lblSorted.AutoSize = True
+        Me.lblSorted.Location = New System.Drawing.Point(131, 453)
+        Me.lblSorted.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSorted.Name = "lblSorted"
+        Me.lblSorted.Size = New System.Drawing.Size(70, 25)
+        Me.lblSorted.TabIndex = 16
+        Me.lblSorted.Text = "Sorted"
+        '
+        'lblUnsorted
+        '
+        Me.lblUnsorted.AutoSize = True
+        Me.lblUnsorted.Location = New System.Drawing.Point(964, 453)
+        Me.lblUnsorted.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblUnsorted.Name = "lblUnsorted"
+        Me.lblUnsorted.Size = New System.Drawing.Size(91, 25)
+        Me.lblUnsorted.TabIndex = 17
+        Me.lblUnsorted.Text = "Unsorted"
+        '
+        'txtCmpRes
+        '
+        Me.txtCmpRes.Location = New System.Drawing.Point(576, 509)
+        Me.txtCmpRes.Name = "txtCmpRes"
+        Me.txtCmpRes.Size = New System.Drawing.Size(48, 30)
+        Me.txtCmpRes.TabIndex = 18
+        '
+        'lblCmpWith
+        '
+        Me.lblCmpWith.AutoSize = True
+        Me.lblCmpWith.Location = New System.Drawing.Point(166, 514)
+        Me.lblCmpWith.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCmpWith.Name = "lblCmpWith"
+        Me.lblCmpWith.Size = New System.Drawing.Size(192, 25)
+        Me.lblCmpWith.TabIndex = 19
+        Me.lblCmpWith.Text = "Current Comparision"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 5000
+        '
+        'txtOutput1
+        '
+        Me.txtOutput1.Location = New System.Drawing.Point(228, 237)
+        Me.txtOutput1.Name = "txtOutput1"
+        Me.txtOutput1.Size = New System.Drawing.Size(714, 25)
+        Me.txtOutput1.TabIndex = 11
+        Me.txtOutput1.Text = ""
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1043, 510)
-        Me.Controls.Add(Me.txtOutput)
+        Me.ClientSize = New System.Drawing.Size(1197, 584)
+        Me.Controls.Add(Me.lblCmpWith)
+        Me.Controls.Add(Me.txtCmpRes)
+        Me.Controls.Add(Me.lblUnsorted)
+        Me.Controls.Add(Me.lblSorted)
+        Me.Controls.Add(Me.txtUnSorted)
+        Me.Controls.Add(Me.txtCmp2)
+        Me.Controls.Add(Me.txtCmp1)
+        Me.Controls.Add(Me.txtSorted)
+        Me.Controls.Add(Me.txtOutput1)
         Me.Controls.Add(Me.lblDone)
         Me.Controls.Add(Me.btnSort)
         Me.Controls.Add(Me.btnNxt)
@@ -168,6 +259,15 @@ Partial Class Form1
     Friend WithEvents btnClr As System.Windows.Forms.Button
     Friend WithEvents btnNxt As System.Windows.Forms.Button
     Friend WithEvents lblDone As System.Windows.Forms.Label
-    Friend WithEvents txtOutput As System.Windows.Forms.RichTextBox
+    Friend WithEvents txtSorted As System.Windows.Forms.TextBox
+    Friend WithEvents txtCmp1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCmp2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtUnSorted As System.Windows.Forms.TextBox
+    Friend WithEvents lblSorted As System.Windows.Forms.Label
+    Friend WithEvents lblUnsorted As System.Windows.Forms.Label
+    Friend WithEvents txtCmpRes As System.Windows.Forms.TextBox
+    Friend WithEvents lblCmpWith As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents txtOutput1 As System.Windows.Forms.RichTextBox
 
 End Class

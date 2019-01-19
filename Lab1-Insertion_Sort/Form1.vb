@@ -9,12 +9,19 @@
     Dim siz As Integer = 0
     Dim flgdec As Integer = 0
     Dim flgstr As Integer = 0
+    Dim y As Integer = 1
+    Dim x As Integer = 1
+    Dim counter As Integer = 1
+
 
 
     Private Sub Clr()
         txtNum.Clear()
         txtArr.Clear()
-        txtOutput.Clear()
+        txtOutput1.Clear()
+        For i As Integer = 2 To counter - 1
+            Me.Controls.Remove(Me.Controls.Find("txtOutput" & CStr(i), True)(0))
+        Next
         a = {}
         inp = {}
         arr = {}
@@ -24,6 +31,8 @@
         siz = 0
         flgdec = 0
         flgstr = 0
+        y = 1
+        btnNxt.Hide()
         btnSort.Show()
     End Sub
 
@@ -45,6 +54,7 @@
     End Sub
 
     Private Sub SortStr()
+        '''''''''''''''''''''''Insertion sort for strings one step at a time''''''''''''''''''
         Dim tmp As String = Nothing
         If len > 1 Then
             Dim j As Integer = cnt - 1
@@ -61,7 +71,7 @@
             cnt += 1
 
         End If
-
+        '''''''insertion sort end'''''''''''
         'Dim txt() As String = Nothing
         'For k As Integer = 0 To inp.Length - 1
         '    txt(k) = CStr(inp(k))
@@ -79,13 +89,13 @@
         Next
         tmp &= Environment.NewLine
         'If j <> cnt - 1 Then
-        txtOutput.Text &= tmp
+        txtOutput1.Text &= tmp
         'txtOutput.Select(strt, fin - strt)
-        txtOutput.SelectionStart = strt
-        txtOutput.SelectionLength = fin - strt
+        txtOutput1.SelectionStart = strt
+        txtOutput1.SelectionLength = fin - strt
 
-        txtOutput.SelectionBackColor = Color.Green
-        txtOutput.DeselectAll()
+        txtOutput1.SelectionBackColor = Color.Green
+        txtOutput1.DeselectAll()
 
         'txtOutput.SetBackColor = Color.Aqua
 
@@ -94,31 +104,70 @@
 
     End Sub
 
+    '''function to make new richtextboxex'''
+    Private Sub outTextAdder(i As Integer, tmp As String)
+        Dim txtName As String
+        txtName = "txtOutput" & CStr(i)
+        y += 25
+        Dim txt1 As New RichTextBox
+        txt1.Name = txtName
+        txt1.Width = 714
+        txt1.Height = 25
+        Me.Controls.Add(txt1)
+        txt1.Location = New Point(x, y)
+        txt1.Text = tmp
+    End Sub
+
+    Sub Delay(ByVal dblSecs As Double)
+
+        Const OneSec As Double = 1.0# / (1440.0# * 60.0#)
+        Dim dblWaitTil As Date
+        Now.AddSeconds(OneSec)
+        dblWaitTil = Now.AddSeconds(OneSec).AddSeconds(dblSecs)
+        Do Until Now > dblWaitTil
+            Application.DoEvents() ' Allow windows messages to be processed
+        Loop
+    End Sub
+
     Private Sub SortDec()
         Dim tmp As String = Nothing
+        Dim cmp As String = Nothing
         If len > 1 Then
             Dim j As Integer = cnt - 1
             Dim cur As Decimal = arr(cnt)
             While j >= 0
+                txtCmp1.Text = CStr(cur)
+                txtCmp2.Text = CStr(arr(j))
+                'cmp &= CStr(arr(j)) & " "
                 If cur < arr(j) Then
                     arr(j + 1) = arr(j)
                     j -= 1
+                    txtCmpRes.Text = CStr("<")
                 Else
+                    txtCmpRes.Text = CStr(">=")
                     Exit While
                 End If
+
+                'System.Threading.Thread.Sleep(1000)
+                Delay(1)
             End While
             arr(j + 1) = cur
             cnt += 1
-
         End If
 
+        'txtCmp2.Text = cmp
         For k As Integer = 0 To arr.Length - 1
             tmp &= CStr(arr(k)) & "; "
         Next
         tmp &= Environment.NewLine
 
         'If j <> cnt - 1 Then
-        txtOutput.Text &= tmp
+        If counter = 1 Then
+            txtOutput1.Text = tmp
+            counter += 1
+        End If
+        outTextAdder(counter, tmp)
+        counter += 1
         'End If
 
     End Sub
@@ -278,5 +327,22 @@
         End If
 
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        y = 237
+        x = 228
+    End Sub
+
+    Private Sub lblOutput_Click(sender As Object, e As EventArgs) Handles lblOutput.Click
+
+    End Sub
+
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    If tim = 0 Then
+    '        Timer1.Enabled = False
+    '    End If
+    '    tim -= 1
+    'End Sub
+
 
 End Class

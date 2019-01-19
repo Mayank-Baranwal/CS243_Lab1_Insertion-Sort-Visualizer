@@ -19,6 +19,9 @@ Lab1-Insertion_Sort
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="M:Lab1_Insertion_Sort.Form1.outTextAdder(System.Int32,System.String)">
+function to make new richtextboxex'''
+
 </member>
 </members>
 </doc>
