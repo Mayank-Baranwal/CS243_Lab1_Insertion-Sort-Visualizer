@@ -38,21 +38,29 @@ Partial Class Form1
         Me.txtCmpRes = New System.Windows.Forms.TextBox()
         Me.lblCmpWith = New System.Windows.Forms.Label()
         Me.txtOutput1 = New System.Windows.Forms.RichTextBox()
+        Me.pan_header = New System.Windows.Forms.Panel()
+        Me.lbl_header = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.help_button = New System.Windows.Forms.Button()
+        Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSort
         '
-        Me.btnSort.Location = New System.Drawing.Point(504, 101)
+        Me.btnSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSort.ForeColor = System.Drawing.Color.White
+        Me.btnSort.Location = New System.Drawing.Point(974, 101)
         Me.btnSort.Name = "btnSort"
         Me.btnSort.Size = New System.Drawing.Size(136, 59)
         Me.btnSort.TabIndex = 2
         Me.btnSort.Text = "&Start Insertion Sort"
-        Me.btnSort.UseVisualStyleBackColor = True
+        Me.btnSort.UseVisualStyleBackColor = False
         '
         'lblArr
         '
         Me.lblArr.AutoSize = True
-        Me.lblArr.Location = New System.Drawing.Point(78, 37)
+        Me.lblArr.Location = New System.Drawing.Point(78, 114)
         Me.lblArr.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblArr.Name = "lblArr"
         Me.lblArr.Size = New System.Drawing.Size(110, 25)
@@ -61,8 +69,9 @@ Partial Class Form1
         '
         'txtArr
         '
-        Me.txtArr.Font = New System.Drawing.Font("Calibri", 12.0!)
-        Me.txtArr.Location = New System.Drawing.Point(228, 25)
+        Me.txtArr.BackColor = System.Drawing.Color.White
+        Me.txtArr.Font = New System.Drawing.Font("Calibri", 16.0!)
+        Me.txtArr.Location = New System.Drawing.Point(228, 101)
         Me.txtArr.Multiline = True
         Me.txtArr.Name = "txtArr"
         Me.txtArr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -81,30 +90,40 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(714, 101)
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnExit.ForeColor = System.Drawing.Color.White
+        Me.btnExit.Location = New System.Drawing.Point(992, 533)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(92, 59)
+        Me.btnExit.Size = New System.Drawing.Size(136, 59)
         Me.btnExit.TabIndex = 7
         Me.btnExit.Text = "E&xit"
-        Me.btnExit.UseVisualStyleBackColor = True
+        Me.btnExit.UseVisualStyleBackColor = False
         '
         'btnClr
         '
-        Me.btnClr.Location = New System.Drawing.Point(331, 101)
+        Me.btnClr.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnClr.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClr.ForeColor = System.Drawing.Color.White
+        Me.btnClr.Location = New System.Drawing.Point(991, 383)
         Me.btnClr.Name = "btnClr"
-        Me.btnClr.Size = New System.Drawing.Size(92, 59)
+        Me.btnClr.Size = New System.Drawing.Size(136, 59)
         Me.btnClr.TabIndex = 8
         Me.btnClr.Text = "&Clear"
-        Me.btnClr.UseVisualStyleBackColor = True
+        Me.btnClr.UseVisualStyleBackColor = False
         '
         'btnNxt
         '
-        Me.btnNxt.Location = New System.Drawing.Point(504, 101)
+        Me.btnNxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNxt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNxt.ForeColor = System.Drawing.Color.White
+        Me.btnNxt.Location = New System.Drawing.Point(992, 455)
         Me.btnNxt.Name = "btnNxt"
         Me.btnNxt.Size = New System.Drawing.Size(136, 59)
         Me.btnNxt.TabIndex = 9
         Me.btnNxt.Text = "Next &Step"
-        Me.btnNxt.UseVisualStyleBackColor = True
+        Me.btnNxt.UseVisualStyleBackColor = False
+        Me.btnNxt.Visible = False
         '
         'lblDone
         '
@@ -195,12 +214,58 @@ Partial Class Form1
         Me.txtOutput1.TabIndex = 11
         Me.txtOutput1.Text = ""
         '
+        'pan_header
+        '
+        Me.pan_header.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.pan_header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pan_header.Controls.Add(Me.lbl_header)
+        Me.pan_header.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pan_header.Location = New System.Drawing.Point(0, 0)
+        Me.pan_header.Name = "pan_header"
+        Me.pan_header.Size = New System.Drawing.Size(1209, 68)
+        Me.pan_header.TabIndex = 20
+        '
+        'lbl_header
+        '
+        Me.lbl_header.AutoSize = True
+        Me.lbl_header.Font = New System.Drawing.Font("Comic Sans MS", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_header.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_header.Location = New System.Drawing.Point(448, 8)
+        Me.lbl_header.Name = "lbl_header"
+        Me.lbl_header.Size = New System.Drawing.Size(301, 56)
+        Me.lbl_header.TabIndex = 0
+        Me.lbl_header.Text = "Visual Learning"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(1009, 344)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 25)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "Controls"
+        '
+        'help_button
+        '
+        Me.help_button.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.help_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.help_button.Location = New System.Drawing.Point(1128, 101)
+        Me.help_button.Name = "help_button"
+        Me.help_button.Size = New System.Drawing.Size(59, 59)
+        Me.help_button.TabIndex = 22
+        Me.help_button.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1197, 584)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(191, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1209, 604)
+        Me.Controls.Add(Me.help_button)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.pan_header)
         Me.Controls.Add(Me.lblCmpWith)
         Me.Controls.Add(Me.txtCmpRes)
         Me.Controls.Add(Me.lblLegend)
@@ -220,7 +285,9 @@ Partial Class Form1
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Visual Learning"
+        Me.pan_header.ResumeLayout(False)
+        Me.pan_header.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,5 +308,9 @@ Partial Class Form1
     Friend WithEvents txtCmpRes As System.Windows.Forms.TextBox
     Friend WithEvents lblCmpWith As System.Windows.Forms.Label
     Friend WithEvents txtOutput1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents pan_header As System.Windows.Forms.Panel
+    Friend WithEvents lbl_header As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents help_button As System.Windows.Forms.Button
 
 End Class

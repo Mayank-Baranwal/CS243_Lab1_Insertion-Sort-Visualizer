@@ -1,7 +1,31 @@
-﻿Public Class Form1
+﻿'Authors -
+'    Soumik Paul (paul170101066@iitg.ac.in)
+'    Mayank Baranwal (baran____@iitg.ac.in)
 
+
+
+''' <summary>
+''' Implemented startup pop-up form for help of beginners (Form2.vb)
+''' Form1.vb takes variable number of inuputs (tested till 50)
+''' highlights sorted output as green and unsorted part as red
+''' every 0.5 seconds, current compa
+''' all out of bounds exceptions handled
+''' "input of different types" exception handled
+''' sorting for decimals as well as strings
+''' for strings the increasing order is a,A,b,B,c,C,....
+''' After error messagebox, need to restart program -handled
+''' 
+''' </summary>
+''' <remarks></remarks>
+
+Public Class Form1
+    'Declarations being used across various functions
+
+    'array of strings to store split input
     Dim a() As String = {}
     Dim inp() As String = {}
+
+    'Utility variables
     Dim len As Integer = 0
     Dim cnt As Integer = 1
     Dim arr As Decimal() = {}
@@ -12,8 +36,8 @@
     Dim x As Integer = 1
     Dim counter As Integer = 1
 
+    'Utility to clear all input and outputs and reset utility variables
     Private Sub Clr()
-        'txtNum.Clear()
 
         txtArr.Clear()
         txtArr.ReadOnly = False
@@ -21,9 +45,12 @@
         txtCmp1.Clear()
         txtCmp2.Clear()
         txtCmpRes.Clear()
+
+        'deleting dynamically allocated controls
         For i As Integer = 2 To counter - 1
             Me.Controls.Remove(Me.Controls.Find("txtOutput" & CStr(i), True)(0))
         Next
+
         a = {}
         inp = {}
         arr = {}
@@ -37,18 +64,16 @@
         counter = 1
         btnSort.Show()
         btnNxt.Hide()
-        Application.Restart()
-        'Me.Refresh()
-        'Me.Controls.Clear() 'removes all the controls on the form
-        'InitializeComponent() 'load all the controls again
+        'Application.Restart()
 
     End Sub
 
+    'utility to display error
     Private Sub InpFail()
         MessageBox.Show("Enter valid input", "Error")
         Console.Write("Error: Invalid input type")
     End Sub
-
+    ''''''returns '''''''
     Private Sub TxtIndex(ByRef strt As Integer, ByRef fin As Integer, cnt As Integer, ParamArray Op() As String)
         Dim ind As Integer = 0
         For i As Integer = 0 To cnt
@@ -57,12 +82,11 @@
         If cnt = Op.Length() Then
             ind -= 1
         End If
-        'MessageBox.Show(ind)
         fin = strt + ind
     End Sub
 
     Private Sub SortStr()
-        '''''''''''''''''''''''Insertion sort for strings one step at a time''''''''''''''''''
+        '''''''''''''''''''''''Insertion sort for strings one step at a time'''''''''''''''''''''
         Dim tmp As String = Nothing
         If len > 1 Then
             Dim j As Integer = cnt - 1
@@ -153,7 +177,6 @@
             While j >= 0
                 txtCmp1.Text = CStr(cur)
                 txtCmp2.Text = CStr(arr(j))
-                'cmp &= CStr(arr(j)) & " "
                 If cur < arr(j) Then
                     arr(j + 1) = arr(j)
                     j -= 1
@@ -163,14 +186,12 @@
                     Exit While
                 End If
 
-                'System.Threading.Thread.Sleep(1000)
                 Delay(0.5)
             End While
             arr(j + 1) = cur
             cnt += 1
         End If
 
-        'txtCmp2.Text = cmp
         For k As Integer = 0 To arr.Length - 1
             tmp &= CStr(arr(k)) & " "
         Next
@@ -191,7 +212,7 @@
             txtOutput1.SelectionBackColor = Color.PaleVioletRed
             txtOutput1.Select(strt, fin - strt)
             txtOutput1.SelectionBackColor = Color.LightGreen
-            
+
             counter += 1
         Else
             outTextAdder(counter, tmp, strt, fin)
@@ -200,13 +221,12 @@
 
     End Sub
 
-   
+
     Private Function Sorter()
         btnNxt.Hide()
         a = Split(txtArr.Text(), " ")
 
         Dim tmp As String = Nothing
-        'Dim cnt As Integer = 0
 
         For i As Integer = 0 To a.Length - 1
             If a(i).Trim = "" Then
@@ -215,7 +235,6 @@
             Dim isLetter As Boolean = True
             If IsNumeric(a(i)) Then
                 flgdec = 1
-                'tmp &= flgdec & " "
             Else
                 For j = 1 To a(i).Length
                     Select Case Asc(Mid(a(i), j, 1))
@@ -230,9 +249,9 @@
                     flgstr = 1
                 Else
                     InpFail()
+                    Application.Restart()
                     Fail = 1
                     Clr()
-                    'Return 1
                     Exit For
                 End If
             End If
@@ -243,12 +262,10 @@
                 Fail = 1
                 Clr()
                 Exit For
-                'Return 1
             End If
 
             Array.Resize(inp, inp.Length + 1)
             inp(inp.Length - 1) = a(i)
-            'tmp &= a(i) & "; "
         Next
 
         For i As Integer = 0 To inp.Length - 1
@@ -265,9 +282,9 @@
                 Catch ex As Exception
                     MessageBox.Show("Number overflow/underflow", "Error")
                     Console.Write("Error: Number overflow/underflow")
+                    Application.Restart()
                     Fail = 1
                     Clr()
-                    'Return 1
                     Exit For
                 End Try
 
@@ -279,9 +296,6 @@
         End If
         btnSort.Hide()
         btnNxt.Show()
-        'If Fail = 0 Then
-        '    txtOutput.Text = tmp
-        'End If
 
         Return 0
     End Function
@@ -317,10 +331,12 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         y = 253
         x = 228
-    End Sub
-
-    Private Sub lblOutput_Click(sender As Object, e As EventArgs) Handles lblOutput.Click
-
+        Dim xForm As New Form2
+        If xForm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+            System.Diagnostics.Process.Start("https://www.geeksforgeeks.org/sorting-algorithms/")
+        Else
+            xForm.Close()
+        End If
     End Sub
 
 End Class
