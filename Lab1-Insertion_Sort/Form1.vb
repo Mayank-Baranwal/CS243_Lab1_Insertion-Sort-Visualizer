@@ -59,7 +59,7 @@ Public Class Form1
         Fail = 0
         flgdec = 0
         flgstr = 0
-        y = 253
+        y = 356
         x = 228
         counter = 1
         btnSort.Show()
@@ -126,9 +126,9 @@ Public Class Form1
         If counter = 1 Then
             txtOutput1.Text = tmp
             txtOutput1.Select(strt, tmp.Length - 1)
-            txtOutput1.SelectionBackColor = Color.PaleVioletRed
+            txtOutput1.SelectionBackColor = Color.Red
             txtOutput1.Select(strt, fin - strt)
-            txtOutput1.SelectionBackColor = Color.LightGreen
+            txtOutput1.SelectionBackColor = Color.Lime
 
             counter += 1
         Else
@@ -151,10 +151,11 @@ Public Class Form1
         Me.Controls.Add(txt1)
         txt1.Location = New Point(x, y)
         txt1.Text = tmp
+        txt1.BackColor = Color.FromArgb(255, 192, 192, 255)
         txt1.Select(strt, fin - strt)
-        txt1.SelectionBackColor = Color.LightGreen
+        txt1.SelectionBackColor = Color.Lime
         txt1.Select(fin, tmp.Length)
-        txt1.SelectionBackColor = Color.PaleVioletRed
+        txt1.SelectionBackColor = Color.Red
 
     End Sub
 
@@ -329,7 +330,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        y = 253
+        y = 356
         x = 228
         Dim xForm As New Form2
         If xForm.ShowDialog = Windows.Forms.DialogResult.Yes Then
