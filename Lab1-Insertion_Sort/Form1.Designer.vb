@@ -41,7 +41,6 @@ Partial Class Form1
         Me.pan_header = New System.Windows.Forms.Panel()
         Me.lbl_header = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.help_button = New System.Windows.Forms.Button()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,7 +49,7 @@ Partial Class Form1
         Me.btnSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSort.ForeColor = System.Drawing.Color.White
-        Me.btnSort.Location = New System.Drawing.Point(974, 101)
+        Me.btnSort.Location = New System.Drawing.Point(991, 101)
         Me.btnSort.Name = "btnSort"
         Me.btnSort.Size = New System.Drawing.Size(136, 59)
         Me.btnSort.TabIndex = 2
@@ -246,16 +245,6 @@ Partial Class Form1
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Controls"
         '
-        'help_button
-        '
-        Me.help_button.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.help_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.help_button.Location = New System.Drawing.Point(1128, 101)
-        Me.help_button.Name = "help_button"
-        Me.help_button.Size = New System.Drawing.Size(59, 59)
-        Me.help_button.TabIndex = 22
-        Me.help_button.UseVisualStyleBackColor = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -263,7 +252,6 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1209, 604)
-        Me.Controls.Add(Me.help_button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pan_header)
         Me.Controls.Add(Me.lblCmpWith)
@@ -311,6 +299,5 @@ Partial Class Form1
     Friend WithEvents pan_header As System.Windows.Forms.Panel
     Friend WithEvents lbl_header As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents help_button As System.Windows.Forms.Button
 
 End Class

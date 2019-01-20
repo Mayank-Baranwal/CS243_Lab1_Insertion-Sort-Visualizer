@@ -26,6 +26,20 @@ Lab1-Insertion_Sort
 </member><member name="M:Lab1_Insertion_Sort.Form1.outTextAdder(System.Int32,System.String,System.Int32,System.Int32)">
 function to make new richtextboxex'''
 
+</member><member name="T:Lab1_Insertion_Sort.Form1">
+	<summary>
+ Implemented startup pop-up form for help of beginners (Form2.vb)
+ Form1.vb takes variable number of inuputs (tested till 50)
+ highlights sorted output as green and unsorted part as red
+ every 0.5 seconds, current compa
+ all out of bounds exceptions handled
+ "input of different types" exception handled
+ sorting for decimals as well as strings
+ for strings the increasing order is a,A,b,B,c,C,....
+ After error messagebox, need to restart program -handled
+ 
+ </summary>
+	<remarks></remarks>
 </member>
 </members>
 </doc>
