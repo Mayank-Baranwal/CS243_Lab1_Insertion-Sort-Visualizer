@@ -255,7 +255,7 @@ Partial Class Form1
         Me.lbl_header.AutoSize = True
         Me.lbl_header.Font = New System.Drawing.Font("Palatino Linotype", 22.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.lbl_header.ForeColor = System.Drawing.Color.White
-        Me.lbl_header.Location = New System.Drawing.Point(349, 8)
+        Me.lbl_header.Location = New System.Drawing.Point(408, 8)
         Me.lbl_header.Name = "lbl_header"
         Me.lbl_header.Size = New System.Drawing.Size(281, 49)
         Me.lbl_header.TabIndex = 0
