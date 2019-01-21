@@ -47,6 +47,7 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnResInp = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnHelp = New System.Windows.Forms.Button()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -205,7 +206,7 @@ Partial Class Form1
         '
         'txtCmpRes
         '
-        Me.txtCmpRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtCmpRes.BackColor = System.Drawing.SystemColors.ControlLight
         Me.txtCmpRes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCmpRes.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCmpRes.Location = New System.Drawing.Point(484, 336)
@@ -324,6 +325,18 @@ Partial Class Form1
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "Comparision"
         '
+        'btnHelp
+        '
+        Me.btnHelp.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnHelp.Font = New System.Drawing.Font("Palatino Linotype", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHelp.ForeColor = System.Drawing.Color.White
+        Me.btnHelp.Location = New System.Drawing.Point(858, 355)
+        Me.btnHelp.Name = "btnHelp"
+        Me.btnHelp.Size = New System.Drawing.Size(136, 64)
+        Me.btnHelp.TabIndex = 26
+        Me.btnHelp.Text = "&Help"
+        Me.btnHelp.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 27.0!)
@@ -331,6 +344,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1142, 653)
+        Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnResInp)
         Me.Controls.Add(Me.btnTxtFile)
@@ -389,5 +403,6 @@ Partial Class Form1
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents btnResInp As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btnHelp As System.Windows.Forms.Button
 
 End Class

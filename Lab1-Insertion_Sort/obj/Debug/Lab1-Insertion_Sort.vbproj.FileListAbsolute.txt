@@ -41,3 +41,8 @@ C:\Mayank\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_Sort.Form1.res
 C:\Mayank\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_Sort.Form2.resources
 C:\Mayank\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_Sort.Resources.resources
 C:\Mayank\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.vbproj.GenerateResource.Cache
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\BLONGES\Desktop\CS244-Lab1\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.vbproj.ResolveComReference.cache

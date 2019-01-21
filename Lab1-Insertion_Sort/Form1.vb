@@ -417,4 +417,8 @@ Public Class Form1
         txtArr.Focus()
         txtArr.ReadOnly = False
     End Sub
+
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        MessageBox.Show("Please refer to User Documentation")
+    End Sub
 End Class
