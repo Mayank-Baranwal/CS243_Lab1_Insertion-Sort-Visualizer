@@ -1,6 +1,7 @@
 ﻿'Authors -
-'    Soumik Paul (paul170101066@iitg.ac.in)
-'    Mayank Baranwal (baran____@iitg.ac.in)
+'   Mayank Baranwal (baran170102035@iitg.ac.in) 
+'   Soumik Paul (paul170101066@iitg.ac.in)
+'    
 
 
 
@@ -65,6 +66,7 @@ Public Class Form1
         btnSort.Show()
         btnNxt.Hide()
         btnClr.Text = "Clear"
+        txtArr.Focus()
         'Application.Restart()
 
     End Sub
@@ -357,6 +359,15 @@ Public Class Form1
             System.Diagnostics.Process.Start("https://www.geeksforgeeks.org/sorting-algorithms/")
         Else
             xForm.Close()
+        End If
+    End Sub
+
+    Private Sub txtArr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtArr.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If cnt = 1 Then
+                txtArr.ReadOnly = True
+                Checker()
+            End If
         End If
     End Sub
 

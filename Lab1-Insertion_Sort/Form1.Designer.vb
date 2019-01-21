@@ -42,12 +42,14 @@ Partial Class Form1
         Me.lbl_header = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSort
         '
-        Me.btnSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSort.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSort.ForeColor = System.Drawing.Color.Coral
@@ -61,33 +63,33 @@ Partial Class Form1
         'lblArr
         '
         Me.lblArr.AutoSize = True
-        Me.lblArr.Font = New System.Drawing.Font("Gill Sans MT", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArr.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArr.Location = New System.Drawing.Point(67, 123)
         Me.lblArr.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblArr.Name = "lblArr"
-        Me.lblArr.Size = New System.Drawing.Size(151, 34)
+        Me.lblArr.Size = New System.Drawing.Size(115, 24)
         Me.lblArr.TabIndex = 3
         Me.lblArr.Text = "Enter Array"
         '
         'txtArr
         '
-        Me.txtArr.BackColor = System.Drawing.Color.Cornsilk
+        Me.txtArr.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtArr.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtArr.Location = New System.Drawing.Point(228, 109)
         Me.txtArr.Multiline = True
         Me.txtArr.Name = "txtArr"
         Me.txtArr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtArr.Size = New System.Drawing.Size(714, 58)
-        Me.txtArr.TabIndex = 4
+        Me.txtArr.TabIndex = 0
         '
         'lblOutput
         '
         Me.lblOutput.AutoSize = True
-        Me.lblOutput.Font = New System.Drawing.Font("Gill Sans MT", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutput.Location = New System.Drawing.Point(67, 349)
+        Me.lblOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOutput.Location = New System.Drawing.Point(67, 357)
         Me.lblOutput.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOutput.Name = "lblOutput"
-        Me.lblOutput.Size = New System.Drawing.Size(98, 34)
+        Me.lblOutput.Size = New System.Drawing.Size(72, 24)
         Me.lblOutput.TabIndex = 5
         Me.lblOutput.Text = "Output"
         '
@@ -136,7 +138,7 @@ Partial Class Form1
         Me.lblDone.AutoSize = True
         Me.lblDone.Location = New System.Drawing.Point(719, 341)
         Me.lblDone.Name = "lblDone"
-        Me.lblDone.Size = New System.Drawing.Size(0, 27)
+        Me.lblDone.Size = New System.Drawing.Size(0, 21)
         Me.lblDone.TabIndex = 10
         '
         'txtSorted
@@ -146,32 +148,32 @@ Partial Class Form1
         Me.txtSorted.ForeColor = System.Drawing.Color.Black
         Me.txtSorted.Location = New System.Drawing.Point(991, 244)
         Me.txtSorted.Name = "txtSorted"
-        Me.txtSorted.Size = New System.Drawing.Size(119, 34)
+        Me.txtSorted.Size = New System.Drawing.Size(119, 29)
         Me.txtSorted.TabIndex = 12
         Me.txtSorted.Text = "Sorted"
         Me.txtSorted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCmp1
         '
-        Me.txtCmp1.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.txtCmp1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCmp1.Font = New System.Drawing.Font("Palatino Linotype", 14.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.txtCmp1.ForeColor = System.Drawing.Color.GhostWhite
+        Me.txtCmp1.ForeColor = System.Drawing.Color.Black
         Me.txtCmp1.Location = New System.Drawing.Point(334, 273)
         Me.txtCmp1.Name = "txtCmp1"
         Me.txtCmp1.ReadOnly = True
-        Me.txtCmp1.Size = New System.Drawing.Size(256, 39)
+        Me.txtCmp1.Size = New System.Drawing.Size(256, 33)
         Me.txtCmp1.TabIndex = 13
         Me.txtCmp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCmp2
         '
-        Me.txtCmp2.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.txtCmp2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCmp2.Font = New System.Drawing.Font("Palatino Linotype", 14.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.txtCmp2.ForeColor = System.Drawing.Color.GhostWhite
+        Me.txtCmp2.ForeColor = System.Drawing.Color.Black
         Me.txtCmp2.Location = New System.Drawing.Point(681, 273)
         Me.txtCmp2.Name = "txtCmp2"
         Me.txtCmp2.ReadOnly = True
-        Me.txtCmp2.Size = New System.Drawing.Size(253, 39)
+        Me.txtCmp2.Size = New System.Drawing.Size(253, 33)
         Me.txtCmp2.TabIndex = 14
         Me.txtCmp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -182,7 +184,7 @@ Partial Class Form1
         Me.txtUnSorted.ForeColor = System.Drawing.Color.Black
         Me.txtUnSorted.Location = New System.Drawing.Point(991, 298)
         Me.txtUnSorted.Name = "txtUnSorted"
-        Me.txtUnSorted.Size = New System.Drawing.Size(119, 34)
+        Me.txtUnSorted.Size = New System.Drawing.Size(119, 29)
         Me.txtUnSorted.TabIndex = 15
         Me.txtUnSorted.Text = "Unsorted"
         Me.txtUnSorted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -190,40 +192,40 @@ Partial Class Form1
         'lblLegend
         '
         Me.lblLegend.AutoSize = True
-        Me.lblLegend.Font = New System.Drawing.Font("Gill Sans MT", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLegend.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLegend.Location = New System.Drawing.Point(1009, 195)
         Me.lblLegend.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLegend.Name = "lblLegend"
-        Me.lblLegend.Size = New System.Drawing.Size(94, 34)
+        Me.lblLegend.Size = New System.Drawing.Size(72, 24)
         Me.lblLegend.TabIndex = 17
         Me.lblLegend.Text = "Colour"
         '
         'txtCmpRes
         '
-        Me.txtCmpRes.BackColor = System.Drawing.Color.PeachPuff
+        Me.txtCmpRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtCmpRes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCmpRes.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCmpRes.Location = New System.Drawing.Point(617, 279)
         Me.txtCmpRes.Name = "txtCmpRes"
         Me.txtCmpRes.ReadOnly = True
-        Me.txtCmpRes.Size = New System.Drawing.Size(48, 27)
+        Me.txtCmpRes.Size = New System.Drawing.Size(48, 22)
         Me.txtCmpRes.TabIndex = 18
         Me.txtCmpRes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCmpWith
         '
         Me.lblCmpWith.AutoSize = True
-        Me.lblCmpWith.Font = New System.Drawing.Font("Gill Sans MT", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCmpWith.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCmpWith.Location = New System.Drawing.Point(67, 275)
         Me.lblCmpWith.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCmpWith.Name = "lblCmpWith"
-        Me.lblCmpWith.Size = New System.Drawing.Size(260, 34)
+        Me.lblCmpWith.Size = New System.Drawing.Size(202, 24)
         Me.lblCmpWith.TabIndex = 19
         Me.lblCmpWith.Text = "Current Comparision"
         '
         'txtOutput1
         '
-        Me.txtOutput1.BackColor = System.Drawing.Color.Cornsilk
+        Me.txtOutput1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtOutput1.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOutput1.Location = New System.Drawing.Point(228, 357)
         Me.txtOutput1.Name = "txtOutput1"
@@ -250,7 +252,7 @@ Partial Class Form1
         Me.lbl_header.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.lbl_header.Location = New System.Drawing.Point(448, 8)
         Me.lbl_header.Name = "lbl_header"
-        Me.lbl_header.Size = New System.Drawing.Size(281, 49)
+        Me.lbl_header.Size = New System.Drawing.Size(233, 40)
         Me.lbl_header.TabIndex = 0
         Me.lbl_header.Text = "Visual Learning"
         '
@@ -261,9 +263,9 @@ Partial Class Form1
         Me.Label1.Location = New System.Drawing.Point(387, 315)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(183, 23)
+        Me.Label1.Size = New System.Drawing.Size(139, 19)
         Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Number Being inserted"
+        Me.Label1.Text = "Entity Being Inserted"
         '
         'Label2
         '
@@ -272,16 +274,19 @@ Partial Class Form1
         Me.Label2.Location = New System.Drawing.Point(712, 315)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(214, 23)
+        Me.Label2.Size = New System.Drawing.Size(168, 19)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Number Compared Against"
+        Me.Label2.Text = "Entity Compared Against"
+        '
+        'FolderBrowserDialog1
+        '
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 27.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackColor = System.Drawing.Color.PeachPuff
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1209, 653)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -332,5 +337,7 @@ Partial Class Form1
     Friend WithEvents lbl_header As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
 
 End Class
