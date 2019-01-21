@@ -59,11 +59,12 @@ Public Class Form1
         Fail = 0
         flgdec = 0
         flgstr = 0
-        y = 356
-        x = 228
+        y = txtOutput1.Location.Y
+        x = txtOutput1.Location.X
         counter = 1
         btnSort.Show()
         btnNxt.Hide()
+        btnClr.Text = "Clear"
         'Application.Restart()
 
     End Sub
@@ -151,12 +152,11 @@ Public Class Form1
         Me.Controls.Add(txt1)
         txt1.Location = New Point(x, y)
         txt1.Text = tmp
-        txt1.BackColor = Color.FromArgb(255, 192, 192, 255)
+        txt1.BackColor = Color.Cornsilk
         txt1.Select(strt, fin - strt)
         txt1.SelectionBackColor = Color.Lime
         txt1.Select(fin, tmp.Length)
         txt1.SelectionBackColor = Color.Red
-
     End Sub
 
     Sub Delay(ByVal dblSecs As Double)
@@ -210,9 +210,9 @@ Public Class Form1
         If counter = 1 Then
             txtOutput1.Text = tmp
             txtOutput1.Select(strt, tmp.Length - 1)
-            txtOutput1.SelectionBackColor = Color.PaleVioletRed
+            txtOutput1.SelectionBackColor = Color.Red
             txtOutput1.Select(strt, fin - strt)
-            txtOutput1.SelectionBackColor = Color.LightGreen
+            txtOutput1.SelectionBackColor = Color.Lime
 
             counter += 1
         Else
@@ -223,7 +223,7 @@ Public Class Form1
     End Sub
 
 
-    Private Function Sorter()
+    Private Function Checker()
         btnNxt.Hide()
         a = Split(txtArr.Text(), " ")
 
@@ -250,18 +250,23 @@ Public Class Form1
                     flgstr = 1
                 Else
                     InpFail()
-                    Application.Restart()
-                    Fail = 1
+                    'Application.Restart()
                     Clr()
+                    Fail = 1
+                    btnClr.Text = "Click here to try again!"
+
+                    'txtArr.Text = "Error
                     Exit For
                 End If
             End If
 
             If flgdec = 1 And flgstr = 1 Then
+                btnNxt.Hide()
                 MessageBox.Show("Input of mixed type", "Error")
                 Console.Write("Error: Input of mixed type")
-                Fail = 1
                 Clr()
+                Fail = 1
+                btnClr.Text = "Click here to try again!"
                 Exit For
             End If
 
@@ -277,27 +282,41 @@ Public Class Form1
         If flgdec = 1 And Fail = 0 Then
             For i As Integer = 0 To inp.Length - 1
                 Array.Resize(arr, arr.Length + 1)
+                If inp(i).EndsWith("-") Or inp(i).EndsWith("+") Then
+                    InpFail()
+                    'Application.Restart()
+                    Clr()
+                    Fail = 1
+                    btnClr.Text = "Click here to try again!"
+                    Exit For
+                End If
                 Try
                     arr(arr.Length - 1) = CDec(inp(i))
+
 
                 Catch ex As Exception
                     MessageBox.Show("Number overflow/underflow", "Error")
                     Console.Write("Error: Number overflow/underflow")
-                    Application.Restart()
-                    Fail = 1
+                    'Application.Restart()
                     Clr()
+                    Fail = 1
+                    btnClr.Text = "Click here to try again!"
                     Exit For
                 End Try
 
             Next
-            SortDec()
+            If Fail = 0 Then
+                SortDec()
+            End If
+
         End If
         If flgstr = 1 And Fail = 0 Then
             SortStr()
         End If
         btnSort.Hide()
-        btnNxt.Show()
-
+        If Fail = 0 Then
+            btnNxt.Show()
+        End If
         Return 0
     End Function
 
@@ -307,7 +326,7 @@ Public Class Form1
 
     Private Sub btnSort_Click(sender As Object, e As EventArgs) Handles btnSort.Click
         txtArr.ReadOnly = True
-        Sorter()
+        Checker()
     End Sub
 
     Private Sub btnClr_Click(sender As Object, e As EventArgs) Handles btnClr.Click
@@ -325,13 +344,14 @@ Public Class Form1
             btnNxt.Show()
         ElseIf cnt = len Then
             btnNxt.Hide()
+            btnClr.Text = "Done! Click here to reset!"
         End If
 
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        y = 356
-        x = 228
+        y = txtOutput1.Location.Y
+        x = txtOutput1.Location.X
         Dim xForm As New Form2
         If xForm.ShowDialog = Windows.Forms.DialogResult.Yes Then
             System.Diagnostics.Process.Start("https://www.geeksforgeeks.org/sorting-algorithms/")

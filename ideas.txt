@@ -12,7 +12,11 @@ box1 = sorted array (use value cur)'''''''''''''''box2 = value being compared'''
 
 ''Exception handling - range of Dec and stirng '''
 
+
 Error: 
 1) Single very long decimal gives no output
 2) Putting a negative sign after a number is accpeted e. "22-" becomes "-22"
 3) Alternative to Application.Restart
+
+Delete Char by Char Button / Backspace
+fILE iNPUT
