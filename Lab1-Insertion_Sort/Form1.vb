@@ -69,6 +69,7 @@ Public Class Form1
         y = txtOutput1.Location.Y
         x = txtOutput1.Location.X
         counter = 1
+        'Bring back hidden boxes
         btnSort.Show()
         btnNxt.Hide()
         btnClr.Text = "Clear"
@@ -102,6 +103,7 @@ Public Class Form1
     Private Sub outTextAdder(i As Integer, tmp As String, strt As Integer, fin As Integer)
         Dim txtName As String
         txtName = "txtOutput" & CStr(i)
+        'Incrementing location of textbox
         Dim yt As Integer = txtOutput1.Location.Y + 25 * (i - 1)
         Dim txt1 As New RichTextBox
         txt1.Name = txtName
