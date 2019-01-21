@@ -102,14 +102,14 @@ Public Class Form1
     Private Sub outTextAdder(i As Integer, tmp As String, strt As Integer, fin As Integer)
         Dim txtName As String
         txtName = "txtOutput" & CStr(i)
-        y += 25
+        Dim yt As Integer = txtOutput1.Location.Y + 25 * (i - 1)
         Dim txt1 As New RichTextBox
         txt1.Name = txtName
         txt1.Width = 714
         txt1.Height = 25
         txt1.ReadOnly = True
         Me.Controls.Add(txt1)
-        txt1.Location = New Point(x, y)
+        txt1.Location = New Point(x, yt)
         txt1.Text = tmp
         txt1.BackColor = Color.Cornsilk
         'Adding green and red colour for sorted and unsorted portion of array
