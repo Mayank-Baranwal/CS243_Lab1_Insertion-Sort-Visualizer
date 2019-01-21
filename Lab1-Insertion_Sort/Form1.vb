@@ -25,22 +25,27 @@ Public Class Form1
     'array of strings to store split input
     Dim a() As String = {}
     Dim inp() As String = {}
+    Dim arr As Decimal() = {}
 
     'Utility variables
     Dim len As Integer = 0
     Dim cnt As Integer = 1
-    Dim arr As Decimal() = {}
+    Dim counter As Integer = 1
+
+    'Checking processing strings or decimals
     Dim Fail As Boolean = 0
     Dim flgdec As Integer = 0
     Dim flgstr As Integer = 0
+
+    'Position of dynamically allocated textboxes
     Dim y As Integer = 1
     Dim x As Integer = 1
-    Dim counter As Integer = 1
+
 
     'Utility to clear all input and outputs and reset utility variables
     Private Sub Clr()
 
-        txtArr.Clear()
+        'Clearing all textboxes
         txtArr.ReadOnly = False
         txtOutput1.Clear()
         txtCmp1.Clear()
@@ -52,6 +57,7 @@ Public Class Form1
             Me.Controls.Remove(Me.Controls.Find("txtOutput" & CStr(i), True)(0))
         Next
 
+        'Resetting arrays and flags
         a = {}
         inp = {}
         arr = {}
@@ -67,7 +73,6 @@ Public Class Form1
         btnNxt.Hide()
         btnClr.Text = "Clear"
         txtArr.Focus()
-        'Application.Restart()
 
     End Sub
 
@@ -76,9 +81,12 @@ Public Class Form1
         MessageBox.Show("Enter valid input", "Error")
         Console.Write("Error: Invalid input type")
     End Sub
-    ''''''returns '''''''
+
+
+    'Function to determine till which index of textbox is to be coloured green and red
     Private Sub TxtIndex(ByRef strt As Integer, ByRef fin As Integer, cnt As Integer, ParamArray Op() As String)
         Dim ind As Integer = 0
+        'Adding length of each entity till count to determine till where green backcolour should be present
         For i As Integer = 0 To cnt
             ind += (Op(i).Length + 1)
         Next
@@ -88,15 +96,53 @@ Public Class Form1
         fin = strt + ind
     End Sub
 
+    
+
+    'Function to dynamically allocate new richtextboxes'
+    Private Sub outTextAdder(i As Integer, tmp As String, strt As Integer, fin As Integer)
+        Dim txtName As String
+        txtName = "txtOutput" & CStr(i)
+        y += 25
+        Dim txt1 As New RichTextBox
+        txt1.Name = txtName
+        txt1.Width = 714
+        txt1.Height = 25
+        txt1.ReadOnly = True
+        Me.Controls.Add(txt1)
+        txt1.Location = New Point(x, y)
+        txt1.Text = tmp
+        txt1.BackColor = Color.Cornsilk
+        'Adding green and red colour for sorted and unsorted portion of array
+        txt1.Select(strt, fin - strt)
+        txt1.SelectionBackColor = Color.Lime
+        txt1.Select(fin, tmp.Length)
+        txt1.SelectionBackColor = Color.Red
+    End Sub
+
+    'Function to make system pause to allow showing comparisions
+    Sub Delay(ByVal dblSecs As Double)
+
+        Const OneSec As Double = 1.0# / (1440.0# * 60.0#)
+        Dim dblWaitTil As Date
+        Now.AddSeconds(OneSec)
+        dblWaitTil = Now.AddSeconds(OneSec).AddSeconds(dblSecs)
+        Do Until Now > dblWaitTil
+            Application.DoEvents() ' Allow windows messages to be processed
+        Loop
+    End Sub
+
+    'One iteration of insertion sort of strings
     Private Sub SortStr()
-        '''''''''''''''''''''''Insertion sort for strings one step at a time'''''''''''''''''''''
+
         Dim tmp As String = Nothing
         If len > 1 Then
             Dim j As Integer = cnt - 1
             Dim cur As String = inp(cnt)
             While j >= 0
+                'Output in comparison boxes the current strings being compared and result
                 txtCmp1.Text = cur
                 txtCmp2.Text = inp(j)
+                'Shift based on comparison
                 If String.Compare(cur, inp(j)) = -1 Then
                     inp(j + 1) = inp(j)
                     j -= 1
@@ -112,6 +158,7 @@ Public Class Form1
 
         End If
         '''''''insertion sort end'''''''''''
+
         For k As Integer = 0 To inp.Length - 1
             tmp &= inp(k) & " "
         Next
@@ -126,6 +173,7 @@ Public Class Form1
         Dim fin As Integer = 0
         TxtIndex(strt, fin, cnt - 1, txt)
 
+        'Assigning green and red colour for textboxes
         If counter = 1 Then
             txtOutput1.Text = tmp
             txtOutput1.Select(strt, tmp.Length - 1)
@@ -141,45 +189,17 @@ Public Class Form1
 
     End Sub
 
-    '''function to make new richtextboxex'''
-    Private Sub outTextAdder(i As Integer, tmp As String, strt As Integer, fin As Integer)
-        Dim txtName As String
-        txtName = "txtOutput" & CStr(i)
-        y += 25
-        Dim txt1 As New RichTextBox
-        txt1.Name = txtName
-        txt1.Width = 714
-        txt1.Height = 25
-        txt1.ReadOnly = True
-        Me.Controls.Add(txt1)
-        txt1.Location = New Point(x, y)
-        txt1.Text = tmp
-        txt1.BackColor = Color.Cornsilk
-        txt1.Select(strt, fin - strt)
-        txt1.SelectionBackColor = Color.Lime
-        txt1.Select(fin, tmp.Length)
-        txt1.SelectionBackColor = Color.Red
-    End Sub
-
-    Sub Delay(ByVal dblSecs As Double)
-
-        Const OneSec As Double = 1.0# / (1440.0# * 60.0#)
-        Dim dblWaitTil As Date
-        Now.AddSeconds(OneSec)
-        dblWaitTil = Now.AddSeconds(OneSec).AddSeconds(dblSecs)
-        Do Until Now > dblWaitTil
-            Application.DoEvents() ' Allow windows messages to be processed
-        Loop
-    End Sub
-
+    'One iteration of insertion sort of decimals
     Private Sub SortDec()
         Dim tmp As String = Nothing
         If len > 1 Then
             Dim j As Integer = cnt - 1
             Dim cur As Decimal = arr(cnt)
             While j >= 0
+                'Output in comparison boxes the current decimals being compared and result
                 txtCmp1.Text = CStr(cur)
                 txtCmp2.Text = CStr(arr(j))
+                'Shift based on comparison
                 If cur < arr(j) Then
                     arr(j + 1) = arr(j)
                     j -= 1
@@ -199,6 +219,7 @@ Public Class Form1
             tmp &= CStr(arr(k)) & " "
         Next
         tmp &= Environment.NewLine
+        '''''''insertion sort end'''''''''''
 
         Dim txt() As String = {}
         For k As Integer = 0 To inp.Length - 1
@@ -209,6 +230,7 @@ Public Class Form1
         Dim fin As Integer = 0
         TxtIndex(strt, fin, cnt - 1, txt)
 
+        'Assigning green and red colour for textboxes
         If counter = 1 Then
             txtOutput1.Text = tmp
             txtOutput1.Select(strt, tmp.Length - 1)
@@ -224,7 +246,7 @@ Public Class Form1
 
     End Sub
 
-
+    'Function to take input and handle exception cases
     Private Function Checker()
         btnNxt.Hide()
         a = Split(txtArr.Text(), " ")
@@ -232,13 +254,16 @@ Public Class Form1
         Dim tmp As String = Nothing
 
         For i As Integer = 0 To a.Length - 1
+            'Removing strings that are whitespaces
             If a(i).Trim = "" Then
                 Continue For
             End If
             Dim isLetter As Boolean = True
+            'Check if string is a decimal
             If IsNumeric(a(i)) Then
                 flgdec = 1
             Else
+                'Check if string is composed of lowercase and uppercase characters
                 For j = 1 To a(i).Length
                     Select Case Asc(Mid(a(i), j, 1))
                         Case 65 To 90, 97 To 122
@@ -248,20 +273,19 @@ Public Class Form1
                             Exit For
                     End Select
                 Next
+                'Reject if contains non alphanumeric characters
                 If isLetter = True Then
                     flgstr = 1
                 Else
                     InpFail()
-                    'Application.Restart()
                     Clr()
                     Fail = 1
                     btnClr.Text = "Click here to try again!"
-
-                    'txtArr.Text = "Error
                     Exit For
                 End If
             End If
 
+            'Reject if both strings and decimals present in input
             If flgdec = 1 And flgstr = 1 Then
                 btnNxt.Hide()
                 MessageBox.Show("Input of mixed type", "Error")
@@ -272,6 +296,7 @@ Public Class Form1
                 Exit For
             End If
 
+            'Add correct input to inp() array
             Array.Resize(inp, inp.Length + 1)
             inp(inp.Length - 1) = a(i)
         Next
@@ -282,11 +307,11 @@ Public Class Form1
 
         len = inp.Length
         If flgdec = 1 And Fail = 0 Then
+            'Check overflow and extra - error and sed for sorting
             For i As Integer = 0 To inp.Length - 1
                 Array.Resize(arr, arr.Length + 1)
                 If inp(i).EndsWith("-") Or inp(i).EndsWith("+") Then
                     InpFail()
-                    'Application.Restart()
                     Clr()
                     Fail = 1
                     btnClr.Text = "Click here to try again!"
@@ -299,7 +324,6 @@ Public Class Form1
                 Catch ex As Exception
                     MessageBox.Show("Number overflow/underflow", "Error")
                     Console.Write("Error: Number overflow/underflow")
-                    'Application.Restart()
                     Clr()
                     Fail = 1
                     btnClr.Text = "Click here to try again!"
@@ -312,6 +336,7 @@ Public Class Form1
             End If
 
         End If
+        'Sort for string inputs
         If flgstr = 1 And Fail = 0 Then
             SortStr()
         End If
@@ -322,21 +347,26 @@ Public Class Form1
         Return 0
     End Function
 
+    'Exit button click function
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
 
+    'Sorting click start 
     Private Sub btnSort_Click(sender As Object, e As EventArgs) Handles btnSort.Click
         txtArr.ReadOnly = True
         Checker()
     End Sub
 
+    'Clear button command
     Private Sub btnClr_Click(sender As Object, e As EventArgs) Handles btnClr.Click
         Clr()
     End Sub
 
+    'Button to run next iteration of insertion sort if sorting incomplete
     Private Sub btnNxt_Click(sender As Object, e As EventArgs) Handles btnNxt.Click
         btnNxt.Hide()
+        btnClr.Hide()
         If cnt < len Then
             If flgdec = 1 Then
                 SortDec()
@@ -348,9 +378,10 @@ Public Class Form1
             btnNxt.Hide()
             btnClr.Text = "Done! Click here to reset!"
         End If
-
+        btnClr.Show()
     End Sub
 
+    'Initialize values and load forms
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         y = txtOutput1.Location.Y
         x = txtOutput1.Location.X
@@ -362,6 +393,7 @@ Public Class Form1
         End If
     End Sub
 
+    'Starting insertion sort by pressing Enter key
     Private Sub txtArr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtArr.KeyDown
         If e.KeyCode = Keys.Enter Then
             If cnt = 1 Then
@@ -371,4 +403,18 @@ Public Class Form1
         End If
     End Sub
 
+    'Enable reading text from file --> Space separated input
+    Private Sub btnTxtFile_Click(sender As Object, e As EventArgs) Handles btnTxtFile.Click
+        If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+            txtArr.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+
+    'Resetting input field
+    Private Sub btnResInp_Click(sender As Object, e As EventArgs) Handles btnResInp.Click
+        txtArr.Clear()
+        txtArr.Focus()
+        txtArr.ReadOnly = False
+    End Sub
 End Class

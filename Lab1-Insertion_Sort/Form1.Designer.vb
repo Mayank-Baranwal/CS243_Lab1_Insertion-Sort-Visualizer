@@ -43,7 +43,9 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.btnTxtFile = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btnResInp = New System.Windows.Forms.Button()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -278,8 +280,31 @@ Partial Class Form1
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Entity Compared Against"
         '
-        'FolderBrowserDialog1
+        'btnTxtFile
         '
+        Me.btnTxtFile.Location = New System.Drawing.Point(967, 109)
+        Me.btnTxtFile.Name = "btnTxtFile"
+        Me.btnTxtFile.Size = New System.Drawing.Size(114, 58)
+        Me.btnTxtFile.TabIndex = 23
+        Me.btnTxtFile.Text = "Read from .txt File?"
+        Me.btnTxtFile.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'btnResInp
+        '
+        Me.btnResInp.BackColor = System.Drawing.Color.Red
+        Me.btnResInp.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnResInp.Font = New System.Drawing.Font("Palatino Linotype", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnResInp.ForeColor = System.Drawing.Color.White
+        Me.btnResInp.Location = New System.Drawing.Point(845, 82)
+        Me.btnResInp.Name = "btnResInp"
+        Me.btnResInp.Size = New System.Drawing.Size(97, 27)
+        Me.btnResInp.TabIndex = 24
+        Me.btnResInp.Text = "&Reset Input"
+        Me.btnResInp.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -288,6 +313,8 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1209, 653)
+        Me.Controls.Add(Me.btnResInp)
+        Me.Controls.Add(Me.btnTxtFile)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pan_header)
@@ -338,6 +365,8 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents btnTxtFile As System.Windows.Forms.Button
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btnResInp As System.Windows.Forms.Button
 
 End Class
