@@ -97,7 +97,7 @@ Public Class Form1
         fin = strt + ind
     End Sub
 
-    
+
 
     'Function to dynamically allocate new richtextboxes'
     Private Sub outTextAdder(i As Integer, tmp As String, strt As Integer, fin As Integer)
@@ -113,7 +113,7 @@ Public Class Form1
         Me.Controls.Add(txt1)
         txt1.Location = New Point(x, yt)
         txt1.Text = tmp
-        txt1.BackColor = Color.Cornsilk
+        txt1.BackColor = Color.SeaShell
         'Adding green and red colour for sorted and unsorted portion of array
         txt1.Select(strt, fin - strt)
         txt1.SelectionBackColor = Color.Lime
@@ -303,6 +303,15 @@ Public Class Form1
             inp(inp.Length - 1) = a(i)
         Next
 
+        If inp.Length = 0 And Fail = 0 Then
+            btnNxt.Hide()
+            MessageBox.Show("No input entered", "Error")
+            Console.Write("Error: No input given")
+            Clr()
+            Fail = 1
+            btnClr.Text = "Click here to try again!"
+        End If
+
         For i As Integer = 0 To inp.Length - 1
             tmp &= inp(i) & "; "
         Next
@@ -421,6 +430,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        MessageBox.Show("Please refer to User Documentation")
+        Dim msg As String = "Please refer to User Documentation for further guidance" & Environment.NewLine
+        msg &= "This program was developed by the following students" & Environment.NewLine
+        msg &= "at IIT Guwahati:" & Environment.NewLine & Environment.NewLine
+        msg &= "Mayank Baranwal (Roll no: 170101084)" & Environment.NewLine
+        msg &= "Soumik Paul (Roll no: 170101066)" & Environment.NewLine
+        msg &= "N. K. V. Sai Kiran (Roll no: 170101039)" & Environment.NewLine
+        MessageBox.Show(msg, "About Us")
     End Sub
 End Class

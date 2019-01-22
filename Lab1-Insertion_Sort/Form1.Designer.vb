@@ -28,7 +28,6 @@ Partial Class Form1
         Me.lblOutput = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnClr = New System.Windows.Forms.Button()
-        Me.btnNxt = New System.Windows.Forms.Button()
         Me.lblDone = New System.Windows.Forms.Label()
         Me.txtSorted = New System.Windows.Forms.TextBox()
         Me.txtCmp1 = New System.Windows.Forms.TextBox()
@@ -48,6 +47,7 @@ Partial Class Form1
         Me.btnResInp = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnHelp = New System.Windows.Forms.Button()
+        Me.btnNxt = New System.Windows.Forms.Button()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,7 +56,7 @@ Partial Class Form1
         Me.btnSort.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnSort.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSort.ForeColor = System.Drawing.Color.White
-        Me.btnSort.Location = New System.Drawing.Point(396, 236)
+        Me.btnSort.Location = New System.Drawing.Point(396, 203)
         Me.btnSort.Name = "btnSort"
         Me.btnSort.Size = New System.Drawing.Size(136, 64)
         Me.btnSort.TabIndex = 2
@@ -91,7 +91,7 @@ Partial Class Form1
         Me.lblOutput.AutoSize = True
         Me.lblOutput.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOutput.ForeColor = System.Drawing.Color.DimGray
-        Me.lblOutput.Location = New System.Drawing.Point(90, 462)
+        Me.lblOutput.Location = New System.Drawing.Point(90, 400)
         Me.lblOutput.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOutput.Name = "lblOutput"
         Me.lblOutput.Size = New System.Drawing.Size(89, 25)
@@ -103,7 +103,7 @@ Partial Class Form1
         Me.btnExit.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnExit.Font = New System.Drawing.Font("Palatino Linotype", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(626, 236)
+        Me.btnExit.Location = New System.Drawing.Point(626, 203)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(136, 64)
         Me.btnExit.TabIndex = 7
@@ -115,31 +115,17 @@ Partial Class Form1
         Me.btnClr.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnClr.Font = New System.Drawing.Font("Palatino Linotype", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClr.ForeColor = System.Drawing.Color.White
-        Me.btnClr.Location = New System.Drawing.Point(169, 236)
+        Me.btnClr.Location = New System.Drawing.Point(169, 203)
         Me.btnClr.Name = "btnClr"
         Me.btnClr.Size = New System.Drawing.Size(136, 64)
         Me.btnClr.TabIndex = 8
         Me.btnClr.Text = "&Clear"
         Me.btnClr.UseVisualStyleBackColor = False
         '
-        'btnNxt
-        '
-        Me.btnNxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnNxt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnNxt.Font = New System.Drawing.Font("Palatino Linotype", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNxt.ForeColor = System.Drawing.Color.Coral
-        Me.btnNxt.Location = New System.Drawing.Point(396, 236)
-        Me.btnNxt.Name = "btnNxt"
-        Me.btnNxt.Size = New System.Drawing.Size(136, 64)
-        Me.btnNxt.TabIndex = 9
-        Me.btnNxt.Text = "Next &Step"
-        Me.btnNxt.UseVisualStyleBackColor = False
-        Me.btnNxt.Visible = False
-        '
         'lblDone
         '
         Me.lblDone.AutoSize = True
-        Me.lblDone.Location = New System.Drawing.Point(586, 341)
+        Me.lblDone.Location = New System.Drawing.Point(586, 308)
         Me.lblDone.Name = "lblDone"
         Me.lblDone.Size = New System.Drawing.Size(0, 27)
         Me.lblDone.TabIndex = 10
@@ -161,7 +147,7 @@ Partial Class Form1
         Me.txtCmp1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCmp1.Font = New System.Drawing.Font("Palatino Linotype", 14.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.txtCmp1.ForeColor = System.Drawing.Color.Black
-        Me.txtCmp1.Location = New System.Drawing.Point(215, 330)
+        Me.txtCmp1.Location = New System.Drawing.Point(215, 297)
         Me.txtCmp1.Name = "txtCmp1"
         Me.txtCmp1.ReadOnly = True
         Me.txtCmp1.Size = New System.Drawing.Size(256, 39)
@@ -173,7 +159,7 @@ Partial Class Form1
         Me.txtCmp2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCmp2.Font = New System.Drawing.Font("Palatino Linotype", 14.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.txtCmp2.ForeColor = System.Drawing.Color.Black
-        Me.txtCmp2.Location = New System.Drawing.Point(548, 330)
+        Me.txtCmp2.Location = New System.Drawing.Point(548, 297)
         Me.txtCmp2.Name = "txtCmp2"
         Me.txtCmp2.ReadOnly = True
         Me.txtCmp2.Size = New System.Drawing.Size(253, 39)
@@ -209,7 +195,7 @@ Partial Class Form1
         Me.txtCmpRes.BackColor = System.Drawing.SystemColors.ControlLight
         Me.txtCmpRes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCmpRes.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCmpRes.Location = New System.Drawing.Point(484, 336)
+        Me.txtCmpRes.Location = New System.Drawing.Point(484, 303)
         Me.txtCmpRes.Name = "txtCmpRes"
         Me.txtCmpRes.ReadOnly = True
         Me.txtCmpRes.Size = New System.Drawing.Size(48, 27)
@@ -221,7 +207,7 @@ Partial Class Form1
         Me.lblCmpWith.AutoSize = True
         Me.lblCmpWith.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCmpWith.ForeColor = System.Drawing.Color.DimGray
-        Me.lblCmpWith.Location = New System.Drawing.Point(79, 330)
+        Me.lblCmpWith.Location = New System.Drawing.Point(79, 297)
         Me.lblCmpWith.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCmpWith.Name = "lblCmpWith"
         Me.lblCmpWith.Size = New System.Drawing.Size(96, 25)
@@ -232,7 +218,7 @@ Partial Class Form1
         '
         Me.txtOutput1.BackColor = System.Drawing.Color.SeaShell
         Me.txtOutput1.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOutput1.Location = New System.Drawing.Point(95, 500)
+        Me.txtOutput1.Location = New System.Drawing.Point(95, 438)
         Me.txtOutput1.Name = "txtOutput1"
         Me.txtOutput1.ReadOnly = True
         Me.txtOutput1.Size = New System.Drawing.Size(714, 26)
@@ -265,7 +251,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label1.Location = New System.Drawing.Point(254, 372)
+        Me.Label1.Location = New System.Drawing.Point(254, 339)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(171, 23)
@@ -276,7 +262,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Palatino Linotype", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label2.Location = New System.Drawing.Point(579, 372)
+        Me.Label2.Location = New System.Drawing.Point(579, 339)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(202, 23)
@@ -318,7 +304,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(80, 355)
+        Me.Label3.Location = New System.Drawing.Point(80, 322)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 20)
@@ -336,6 +322,19 @@ Partial Class Form1
         Me.btnHelp.TabIndex = 26
         Me.btnHelp.Text = "&Help"
         Me.btnHelp.UseVisualStyleBackColor = False
+        '
+        'btnNxt
+        '
+        Me.btnNxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnNxt.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnNxt.Location = New System.Drawing.Point(396, 203)
+        Me.btnNxt.Name = "btnNxt"
+        Me.btnNxt.Size = New System.Drawing.Size(136, 64)
+        Me.btnNxt.TabIndex = 9
+        Me.btnNxt.Text = "Next &Step"
+        Me.btnNxt.UseVisualStyleBackColor = False
+        Me.btnNxt.Visible = False
         '
         'Form1
         '
@@ -384,7 +383,6 @@ Partial Class Form1
     Friend WithEvents lblOutput As System.Windows.Forms.Label
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents btnClr As System.Windows.Forms.Button
-    Friend WithEvents btnNxt As System.Windows.Forms.Button
     Friend WithEvents lblDone As System.Windows.Forms.Label
     Friend WithEvents txtSorted As System.Windows.Forms.TextBox
     Friend WithEvents txtCmp1 As System.Windows.Forms.TextBox
@@ -404,5 +402,6 @@ Partial Class Form1
     Friend WithEvents btnResInp As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnHelp As System.Windows.Forms.Button
+    Friend WithEvents btnNxt As System.Windows.Forms.Button
 
 End Class
