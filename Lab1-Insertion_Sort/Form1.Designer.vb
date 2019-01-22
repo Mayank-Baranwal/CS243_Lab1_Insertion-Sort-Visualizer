@@ -355,7 +355,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1142, 653)
+        Me.ClientSize = New System.Drawing.Size(1142, 721)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.Label3)
@@ -383,6 +383,8 @@ Partial Class Form1
         Me.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.DimGray
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MaximizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(1024, 768)
         Me.Name = "Form1"
         Me.Text = "Visual Learning"
         Me.pan_header.ResumeLayout(False)
