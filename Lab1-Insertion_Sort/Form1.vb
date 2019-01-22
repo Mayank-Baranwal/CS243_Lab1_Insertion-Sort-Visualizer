@@ -430,7 +430,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        Dim msg As String = "Please refer to User Documentation for further guidance" & Environment.NewLine
+        Dim msg As String = "Please refer to User Documentation for further guidance." & Environment.NewLine
         msg &= "This program was developed by the following students" & Environment.NewLine
         msg &= "at IIT Guwahati:" & Environment.NewLine & Environment.NewLine
         msg &= "Mayank Baranwal (Roll no: 170101084)" & Environment.NewLine

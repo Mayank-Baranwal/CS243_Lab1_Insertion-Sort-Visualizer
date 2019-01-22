@@ -48,6 +48,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnHelp = New System.Windows.Forms.Button()
         Me.btnNxt = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.pan_header.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,7 +69,7 @@ Partial Class Form1
         Me.lblArr.AutoSize = True
         Me.lblArr.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArr.ForeColor = System.Drawing.Color.DimGray
-        Me.lblArr.Location = New System.Drawing.Point(90, 84)
+        Me.lblArr.Location = New System.Drawing.Point(90, 87)
         Me.lblArr.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblArr.Name = "lblArr"
         Me.lblArr.Size = New System.Drawing.Size(141, 25)
@@ -135,7 +136,7 @@ Partial Class Form1
         Me.txtSorted.BackColor = System.Drawing.Color.Lime
         Me.txtSorted.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSorted.ForeColor = System.Drawing.Color.Black
-        Me.txtSorted.Location = New System.Drawing.Point(858, 244)
+        Me.txtSorted.Location = New System.Drawing.Point(858, 242)
         Me.txtSorted.Name = "txtSorted"
         Me.txtSorted.Size = New System.Drawing.Size(119, 34)
         Me.txtSorted.TabIndex = 12
@@ -171,7 +172,7 @@ Partial Class Form1
         Me.txtUnSorted.BackColor = System.Drawing.Color.Red
         Me.txtUnSorted.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUnSorted.ForeColor = System.Drawing.Color.Black
-        Me.txtUnSorted.Location = New System.Drawing.Point(858, 298)
+        Me.txtUnSorted.Location = New System.Drawing.Point(858, 297)
         Me.txtUnSorted.Name = "txtUnSorted"
         Me.txtUnSorted.Size = New System.Drawing.Size(119, 34)
         Me.txtUnSorted.TabIndex = 15
@@ -272,11 +273,11 @@ Partial Class Form1
         'btnTxtFile
         '
         Me.btnTxtFile.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnTxtFile.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTxtFile.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTxtFile.ForeColor = System.Drawing.Color.White
-        Me.btnTxtFile.Location = New System.Drawing.Point(858, 123)
+        Me.btnTxtFile.Location = New System.Drawing.Point(858, 115)
         Me.btnTxtFile.Name = "btnTxtFile"
-        Me.btnTxtFile.Size = New System.Drawing.Size(205, 58)
+        Me.btnTxtFile.Size = New System.Drawing.Size(136, 66)
         Me.btnTxtFile.TabIndex = 23
         Me.btnTxtFile.Text = "Read from .txt File?"
         Me.btnTxtFile.UseVisualStyleBackColor = False
@@ -291,8 +292,8 @@ Partial Class Form1
         Me.btnResInp.FlatAppearance.BorderSize = 0
         Me.btnResInp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnResInp.Font = New System.Drawing.Font("Verdana", 10.2!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnResInp.ForeColor = System.Drawing.Color.DarkGray
-        Me.btnResInp.Location = New System.Drawing.Point(683, 82)
+        Me.btnResInp.ForeColor = System.Drawing.Color.Gray
+        Me.btnResInp.Location = New System.Drawing.Point(683, 87)
         Me.btnResInp.Name = "btnResInp"
         Me.btnResInp.Size = New System.Drawing.Size(126, 27)
         Me.btnResInp.TabIndex = 24
@@ -336,6 +337,18 @@ Partial Class Form1
         Me.btnNxt.UseVisualStyleBackColor = False
         Me.btnNxt.Visible = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(233, 89)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(148, 18)
+        Me.Label4.TabIndex = 27
+        Me.Label4.Text = "(Space Separated)"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 27.0!)
@@ -343,6 +356,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1142, 653)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnResInp)
@@ -403,5 +417,6 @@ Partial Class Form1
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnHelp As System.Windows.Forms.Button
     Friend WithEvents btnNxt As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
