@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jh3VvAtl3Km3Ud7AmRmofUqcIqf3Hf9vp3c1/sS64eE=</dsig:DigestValue>
+        <dsig:DigestValue>HJ6CeyZdbsT5JEom+j3yvUlLdCztueFtjwCN2Bc6fks=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C2oVBhzl3HRjYCWNvAQ9FDeqF3LwHXXXj+uSKTQGyK0=</dsig:DigestValue>
+        <dsig:DigestValue>QB5BPdjKypTGLChwSO8zih47XrnV25F9ziOPGUzylSg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lab1-Insertion_Sort.exe" size="66560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lab1-Insertion_Sort.exe" size="59904">
       <assemblyIdentity name="Lab1-Insertion_Sort" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>evTB0/aIEN1HPvi23JjCdqR7VqUgoQRUOTroReb6pVI=</dsig:DigestValue>
+        <dsig:DigestValue>B2pI5UdEYYbKxAmKtTKm3liK3yRTFrx6oywz6cfU4OA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

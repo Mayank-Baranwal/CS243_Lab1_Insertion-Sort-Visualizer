@@ -6,7 +6,21 @@ Lab1-Insertion_Sort
 </name>
 </assembly>
 <members>
-<member name="P:Lab1_Insertion_Sort.My.Resources.Resources.ResourceManager">
+<member name="T:Lab1_Insertion_Sort.Form1">
+	<summary>
+ Implemented startup pop-up form for help of beginners (Form2.vb)
+ Form1.vb takes variable number of inuputs (tested till 50)
+ highlights sorted output as green and unsorted part as red
+ every 0.5 seconds, current compa
+ all out of bounds exceptions handled
+ "input of different types" exception handled
+ sorting for decimals as well as strings
+ for strings the increasing order is a,A,b,B,c,C,....
+ After error messagebox, need to restart program -handled
+ 
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Lab1_Insertion_Sort.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
@@ -23,20 +37,6 @@ Lab1-Insertion_Sort
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="T:Lab1_Insertion_Sort.Form1">
-	<summary>
- Implemented startup pop-up form for help of beginners (Form2.vb)
- Form1.vb takes variable number of inuputs (tested till 50)
- highlights sorted output as green and unsorted part as red
- every 0.5 seconds, current compa
- all out of bounds exceptions handled
- "input of different types" exception handled
- sorting for decimals as well as strings
- for strings the increasing order is a,A,b,B,c,C,....
- After error messagebox, need to restart program -handled
- 
- </summary>
-	<remarks></remarks>
 </member>
 </members>
 </doc>
