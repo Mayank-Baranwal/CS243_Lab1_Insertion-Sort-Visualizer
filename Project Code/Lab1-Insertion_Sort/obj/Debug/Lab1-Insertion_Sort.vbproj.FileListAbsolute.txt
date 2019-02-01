@@ -86,3 +86,10 @@ D:\Mayank\CS244-Lab1\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1_Insertion_S
 D:\Mayank\CS244-Lab1\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.vbproj.GenerateResource.Cache
 D:\Mayank\CS244-Lab1\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.exe.manifest
 D:\Mayank\CS244-Lab1\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.application
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\bin\Debug\Lab1-Insertion_Sort.exe.config
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\Interop.AcroPDFLib.dll
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.vbproj.ResolveComReference.cache
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.exe
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.xml
+D:\Mayank\Git Repos\CS243_Lab1_Visual_Insertion_Sort\Project Code\Lab1-Insertion_Sort\obj\Debug\Lab1-Insertion_Sort.pdb

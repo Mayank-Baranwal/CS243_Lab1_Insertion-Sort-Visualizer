@@ -1,0 +1,5 @@
+Potential Extensions:
+1) Highliting current comparisions in-line using arrows 
+2) Current iteration viewed in a larger textbox at the center of the screen and then added to the bottom dynamically below previous iterations.(just like now)
+3)Use arrows for swaps(use another textbox with invisible arrows pointing to the start of each entry) and bold(or likewise) for current comparisons in the current iteration
+4)fix max screensize
