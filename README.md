@@ -1,4 +1,4 @@
-# CS243 Lab1: Visual Insertion Sort
+# Visual Insertion Sort
 
 ## Project Description
 Visual Learning is an application aimed to help beginners enhance their understanding about Insertion Sort (see https://www.geeksforgeeks.org/insertion-sort/ ) by a Visual representation of the various steps a given set of numbers, or strings undergo. It aims to help students visualize and gain a greater in-depth understanding of the sorting process behind insertion sort.
